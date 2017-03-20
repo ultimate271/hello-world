@@ -10,6 +10,7 @@ namespace hello_world {
 			System.Console.WriteLine("This is my first git program");
 			System.Console.WriteLine("This is some more stuff");
 			System.Console.ReadLine();
+			Console.WriteLine("Are there Changes now?");
 		}
 	}
 }
