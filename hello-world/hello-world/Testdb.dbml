@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="testdb" Class="testdbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Brett-PC\SQLEXPRESS;Initial Catalog=testdb;Integrated Security=True" SettingsObjectName="hello_world.Properties.Settings" SettingsPropertyName="testdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="customer_invoice" Member="Invoices" Storage="_invoices" ThisKey="id" OtherKey="customer_id" Type="Invoice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.invoice" Member="Invoices">
+    <Type Name="Invoice">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="purchase" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="customer_invoice" Member="Customer" Storage="_customer" ThisKey="customer_id" OtherKey="id" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
