@@ -11,6 +11,9 @@ namespace hello_world {
 			System.Console.WriteLine("This is some more stuff");
 			System.Console.ReadLine();
 			Console.WriteLine("Are there Changes now?");
+			Console.WriteLine("This is a feature");
+			Console.WriteLine("This is a feature too!");
+			Console.WriteLine("They are all features!");
 		}
 	}
 }
