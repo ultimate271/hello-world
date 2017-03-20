@@ -14,6 +14,7 @@ namespace hello_world {
 			Console.WriteLine("This is a feature");
 			Console.WriteLine("This is a feature too!");
 			Console.WriteLine("They are all features!");
+			Console.WriteLine("So I want to commit something too");
 		}
 	}
 }
