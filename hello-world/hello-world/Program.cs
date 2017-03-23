@@ -6,8 +6,8 @@ using System.Collections.Generic;
 namespace SomeNamespace {
 	public static class UtilMethods{
 		public static string DoesSomethingAwesome(){
-			Assembly ass = typeof(MyClass).Assembly;
-			var myObject = ass.CreateInstance("SomeNamespace.MyClass");
+			Assembly ass = typeof(UtilMethods).Assembly;
+			var myObject = ass.CreateInstance(string.Format("SomeNamespace.{0}", "MyClass"));
 
 			Type t = myObject.GetType();
 			
