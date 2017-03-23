@@ -7,20 +7,28 @@ namespace SomeNamespace {
 	public static class UtilMethods{
 		public static string DoesSomethingAwesome(){
 			Assembly ass = typeof(UtilMethods).Assembly;
+			Assembly baseAss = typeof(int).Assembly;
 			var myObject = ass.CreateInstance(string.Format("SomeNamespace.{0}", "MyClass"));
-
-			Type t = myObject.GetType();
+			var myInt = baseAss.CreateInstance("System.Int32");
+			var myIEnum = baseAss.CreateInstance("System.Collections.Generic.List<string>");
+			System.Collections.Generic.IEnumerable<string> anObj = new List<string>();
+			Type t = anObj.GetType();
+			//bool x = myInt.GetType().IsValueType;
+			myInt = 12;
 			
 			foreach (PropertyInfo property in myObject.GetType().GetProperties()){
-				if((from att in property.CustomAttributes select att.AttributeType.Name).Contains("MyCustomTagAttribute")){
-					property.SetValue(myObject, property.Name.Length);
-				}
-				else{
-					property.SetValue(myObject, -1);
-				}
+
+				//Type t = (from att in property.CustomAttributes where att.AttributeType == typeof(MyCustomTagAttribute) select att.AttributeType).SingleOrDefault();
+				if (property.ContainsAttribute(typeof(MyCustomTagAttribute))) property.SetValue(myObject, property.Name.Length);
+				
 			}
 
 			return string.Format("{0} {1} {2}", (myObject as MyClass).MyProperty, (myObject as MyClass).MySecondProperty, (myObject as MyClass).MyThirdProperty);
+		}
+
+		public static bool ContainsAttribute(this MemberInfo mi, Type t){
+			return mi.CustomAttributes.Where(att => att.AttributeType == t).Any();
+			//return (from att in mi.CustomAttributes where att.AttributeType == t select att).SingleOrDefault() != null;
 		}
 	}
 
@@ -28,8 +36,10 @@ namespace SomeNamespace {
 	public class MyClass{
 		[MyCustomTag]
 		public int MyProperty { get; set; }
+		[MyCustomTag2]
 		public int MySecondProperty { get; set; }
 		[MyCustomTag]
+		[MyCustomTag2]
 		public int MyThirdProperty { get; set; }
 
 		public MyClass() { }
@@ -38,11 +48,17 @@ namespace SomeNamespace {
 
 		public static void Main() {
 			System.Console.WriteLine(UtilMethods.DoesSomethingAwesome());
+			MyClass myObj = new MyClass();
+			//System.Console.WriteLine(myObj.GetType().CustomAttributes.Contains() ? "It is" : "It isn't");
 		}
 	}
 
 	[AttributeUsage(AttributeTargets.All)]
 	public class MyCustomTagAttribute : Attribute{ }
+	
+	[AttributeUsage(AttributeTargets.All)]
+	public class MyCustomTag2Attribute : Attribute { }
+
 }
 
 //using System;
