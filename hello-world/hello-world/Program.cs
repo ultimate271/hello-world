@@ -19,7 +19,7 @@ namespace SomeNamespace {
 			foreach (PropertyInfo property in myObject.GetType().GetProperties()){
 
 				//Type t = (from att in property.CustomAttributes where att.AttributeType == typeof(MyCustomTagAttribute) select att.AttributeType).SingleOrDefault();
-				if (property.ContainsAttribute(typeof(MyCustomTagAttribute))) property.SetValue(myObject, property.Name.Length);
+				if (property.ContainsAttribute(typeof(MyCustomTagAttribute))) { property.SetValue(myObject, property.Name.Length); }
 				
 			}
 
