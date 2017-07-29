@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>63e24dbc-55fa-418f-a646-cab525a6de45</ProjectGuid>
+    <ProjectGuid>5cb9c086-06d3-405b-9d1a-c5c02572825f</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>HelloFSharp</RootNamespace>
-    <AssemblyName>HelloFSharp</AssemblyName>
+    <RootNamespace>BWRegex</RootNamespace>
+    <AssemblyName>BWRegex</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.1.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>HelloFSharp</Name>
+    <Name>BWRegex</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,9 +51,8 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Library1.ml" />
-    <Compile Include="Syntax.fs" />
-    <None Include="Script.fsx" />
+    <Compile Include="Regex.fsi" />
+    <Compile Include="Regex.fs" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

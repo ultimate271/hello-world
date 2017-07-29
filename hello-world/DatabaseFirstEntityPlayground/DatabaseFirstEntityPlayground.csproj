@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D264F57E-DF4F-4565-9AB3-6684F656B2A5}</ProjectGuid>
+    <ProjectGuid>{1F52D17C-87EA-4E88-9E24-7144CEE00BFD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FSharpEntrypoint</RootNamespace>
-    <AssemblyName>FSharpEntrypoint</AssemblyName>
+    <RootNamespace>DatabaseFirstEntityPlayground</RootNamespace>
+    <AssemblyName>DatabaseFirstEntityPlayground</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,19 +53,20 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WLDataModel.cs" />
+    <Compile Include="WLMovement.cs" />
+    <Compile Include="WLMovementAir.cs" />
+    <Compile Include="WLMovementType.cs" />
+    <Compile Include="WLMovementWeighted.cs" />
+    <Compile Include="WLWorkout.cs" />
+    <Compile Include="WLWorkoutDescriptive.cs" />
+    <Compile Include="WLWorkoutTimed.cs" />
+    <Compile Include="WLWorkoutTimed_Movement.cs" />
+    <Compile Include="WLWorkoutType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BWRegex\BWRegex.fsproj">
-      <Project>{5cb9c086-06d3-405b-9d1a-c5c02572825f}</Project>
-      <Name>BWRegex</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HelloFSharp\HelloFSharp.fsproj">
-      <Project>{63e24dbc-55fa-418f-a646-cab525a6de45}</Project>
-      <Name>HelloFSharp</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
