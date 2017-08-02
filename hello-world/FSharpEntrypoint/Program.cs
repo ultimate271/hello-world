@@ -20,6 +20,7 @@ namespace FSharpEntrypoint {
 			//System.Console.WriteLine("{0} {1} {2}", Playground.boolCompare, Playground.stateCompareFalse, Playground.stateCompareTrue);
 			System.Console.Write("Input a value: ");
 			string input = System.Console.ReadLine();
+			if (true) { System.Console.WriteLine("Something"); }
 			System.Console.WriteLine("Input: {0}\nResult for endWithB:{1}\nResult for endWithC:{2}\nResult for Union: {3}\nResult for Concat: {4}\nResult for Kleene: {5}\nResult for regex: {6}",
 				input,
 				NFA.evalNFA(NFA.endWithB, input),
@@ -30,6 +31,7 @@ namespace FSharpEntrypoint {
 				NFA.evalNFA(NFA.regexTest, input));
 			BWRegex.NFA.Delta delta;
 			System.Console.ReadLine();
+
 		}
 	}
 }

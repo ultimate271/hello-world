@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstEntityPlaygrou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstEntityPlayground", "CodeFirstEntityPlayground\CodeFirstEntityPlayground.csproj", "{7FB6F1F3-69A6-4D30-AA0D-659668856BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloService", "HelloService\HelloService.csproj", "{33D87F4B-9211-4CD5-ABB6-263725A42845}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HelloServiceSetup", "HelloServiceSetup\HelloServiceSetup.vdproj", "{16DCE220-0698-4F31-B34C-A702FB8D81C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,12 @@ Global
 		{7FB6F1F3-69A6-4D30-AA0D-659668856BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB6F1F3-69A6-4D30-AA0D-659668856BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB6F1F3-69A6-4D30-AA0D-659668856BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D87F4B-9211-4CD5-ABB6-263725A42845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D87F4B-9211-4CD5-ABB6-263725A42845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D87F4B-9211-4CD5-ABB6-263725A42845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D87F4B-9211-4CD5-ABB6-263725A42845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DCE220-0698-4F31-B34C-A702FB8D81C5}.Debug|Any CPU.ActiveCfg = Debug
+		{16DCE220-0698-4F31-B34C-A702FB8D81C5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
